@@ -1,2 +1,10 @@
 # paulwebster.org
-Personal website
+
+My Personal website
+
+## Technologies used
+
+* Perl
+* Mojolicious
+* PostgreSQL
+* Docker
