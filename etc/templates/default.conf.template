@@ -1,0 +1,9 @@
+listen  80;
+
+server {
+    listen 80 default_server;
+    location / {
+        root /var/www;
+        index index.html;
+    }
+}
