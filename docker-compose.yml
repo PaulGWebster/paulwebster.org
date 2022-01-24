@@ -6,6 +6,7 @@ services:
     volumes:
       - ./etc/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./etc/nginx/templates:/etc/nginx/templates:ro
+      - ./var/nginx:/var/log/nginx:rw
     ports:
       - "8080:80"
     environment:
@@ -15,6 +16,7 @@ services:
     networks:
       - ingress
       - middleware
+
   postgres:
     container_name: postgresql
     image: paulgwebster/postgres-14.1:23012022
@@ -26,7 +28,7 @@ services:
     networks:
       - services
       - middleware
-      - ingress
+
   pgadmin:
     container_name: pgadmin4
     image: paulgwebster/pgadmin4-23012022
@@ -34,14 +36,17 @@ services:
       - nginx
       - postgres
     volumes:
-      - ./var/dbtool_pgadmin:/var/lib/pgadmin
+      - pgadmin:/var/lib/pgadmin
     networks:
       - ingress
       - services
     environment:
       PGADMIN_DEFAULT_EMAIL: user@domain.com
       PGADMIN_DEFAULT_PASSWORD: test
-      PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: 10
+      PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: 4
+
+volumes:
+  pgadmin:
 
 networks:
   middleware:
