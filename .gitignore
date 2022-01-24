@@ -3,3 +3,5 @@
 docker-compose.override.yml
 var/postgres
 var/pgadmin4
+var/nginx
+var/perl
