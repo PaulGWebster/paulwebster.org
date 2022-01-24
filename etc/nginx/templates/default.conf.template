@@ -2,6 +2,9 @@ server {
     listen ${NGINX_PORT} default_server;
     location / {
         root /var/www;
-        index index.html;
+        # index index.html;
+        proxy_set_header Host $host;
+        proxy_pass http://pgadmin4:5050/;
+        proxy_redirect off;
     }
 }

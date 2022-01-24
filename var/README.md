@@ -1,3 +1,3 @@
-# Do not delete this folder
+# Readwrite locations for different docker images
 
-This is the default place postgresql will initilize if it is not overriden
+Also any http templates are stored here
