@@ -16,8 +16,8 @@ docker push paulgwebster/nginx-1.21.5:23012022
 
 ### pgadmin4 - because who needs proper tags
 
-docker image pull dpage/pgadmin4@sha256:48e5aa3157b0de342023c9c6c1f4a2d7d9b2aeec54958d1c57dbfd89bf47ab2e
-docker tag dpage/pgadmin4@sha256:48e5aa3157b0de342023c9c6c1f4a2d7d9b2aeec54958d1c57dbfd89bf47ab2e paulgwebster/pgadmin4-23012022
+docker image pull dpage/pgadmin4@sha256:e379d900081261dce78482e9a66bdc6f4c0dbe5924133cf7a3cd0c424ae6014f
+docker tag dpage/pgadmin4@sha256:e379d900081261dce78482e9a66bdc6f4c0dbe5924133cf7a3cd0c424ae6014f paulgwebster/pgadmin4-23012022
 docker push paulgwebster/pgadmin4-23012022
 
 ### perl

@@ -8,7 +8,7 @@ services:
       - ./etc/nginx/templates:/etc/nginx/templates:ro
       - ./var/nginx:/var/log/nginx:rw
     ports:
-      - "8080:80"
+      - "80:${NGINX_PORT:-80}"
     environment:
       - NGINX_HOST=${NGINX_HOST:-localhost}
       - NGINX_PORT=${NGINX_PORT:-80}
@@ -32,6 +32,8 @@ services:
   pgadmin:
     container_name: pgadmin4
     image: paulgwebster/pgadmin4-23012022
+    expose:
+      - "80"
     depends_on:
       - nginx
       - postgres
@@ -44,6 +46,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: user@domain.com
       PGADMIN_DEFAULT_PASSWORD: test
       PGADMIN_CONFIG_CONSOLE_LOG_LEVEL: 4
+
 
 volumes:
   pgadmin:
