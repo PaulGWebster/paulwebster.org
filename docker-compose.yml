@@ -13,7 +13,8 @@ services:
   nginx:
     image: paulgwebster/nginx:1.21.5-23012022
     volumes:
-    - .etc/templates:/etc/nginx/templates
+    - ./nginx/etc/templates:/etc/nginx/templates:ro
+    - ./nginx/etc/nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
     - "8080:80"
     environment:
