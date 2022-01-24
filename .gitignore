@@ -1,3 +1,5 @@
 # Docker related
 .env
 docker-compose.override.yml
+var/postgres
+var/pgadmin4
